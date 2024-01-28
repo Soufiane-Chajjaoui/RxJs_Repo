@@ -1,4 +1,6 @@
-console.log("Starting");
+import { interval } from "rxjs";
+
+console.log("Starting Rxjs");
 
 // Use "as HTMLButtonElement" to cast the result to HTMLButtonElement
 const checkRxJsButton = document.getElementById("CheckRxJs") as HTMLButtonElement | null;
@@ -9,3 +11,9 @@ if (checkRxJsButton) {
     alert("CheckRxJs Clicked!");
   })
 }
+
+interval(1000).subscribe({
+  next : (val) => {
+    console.log(val)
+  }
+})
